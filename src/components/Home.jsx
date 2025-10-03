@@ -2,32 +2,25 @@ import TextType from './ui/TextType';
 import { IconCloud } from "./ui/icon-cloud"
 
 function Home () {
-    const slugs = [
-        "typescript",
-        "javascript",
-        "java",
-        "react",
-        "html5",
-        "css3",
-        "nodedotjs",
-        "express",
-        "nextdotjs",
-        "postgresql",
-        "vercel",
-        "jest",
-        "docker",
-        "git",
-        "github",
-        "visualstudiocode",
-        "figma",
+    const images = [
+        "/SkillsLogo/typescript.svg",
+        "/SkillsLogo/javascript.svg",
+        "/SkillsLogo/react.svg",
+        "/SkillsLogo/html-5.svg",
+        "/SkillsLogo/css.svg",
+        "/SkillsLogo/nodejs.svg",
+        "/SkillsLogo/nextjs.svg",
+        "/SkillsLogo/tailwindcss.svg",
+        "/SkillsLogo/react.svg",
+        "/SkillsLogo/express.svg",
+        "/SkillsLogo/postgresql.svg",
+        "/SkillsLogo/vercel.svg",
+        "/SkillsLogo/supabase.svg",
     ]
 
-    const images = slugs.map(
-        (slug) => `https://cdn.simpleicons.org/${slug}/:dark_mode_color?`
-    )
 
     return (
-        <section className='text-[#FAFAFF] w-full max-w-[1100px] mt-16 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-10 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 lg:gap-12'>
+        <section className='text-[#FAFAFF] w-full max-w-[1100px] mt-16 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-10 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-6 lg:gap-12'>
             {/* Contenido de texto */}
             <div className="w-full lg:w-auto flex flex-col gap-6 sm:gap-8">
                 {/* Badge Open to Work */}
@@ -38,7 +31,7 @@ function Home () {
                 </div>
 
                 {/* Títulos principales */}
-                <div className="py-2 font-semibold text-xl sm:text-3xl md:text-4xl lg:text-4xl">
+                <div className="py-2 font-semibold text-3xl md:text-5xl lg:text-4xl">
                     <h1 className="mb-2">Hey, I'm Zenen</h1>
 
                     <div className='flex flex-wrap gap-2 sm:gap-3 items-baseline'>
@@ -71,24 +64,24 @@ function Home () {
                         Each project here reflects my commitment to clean code and exceptional user experience.
                     </p>
                 </div>
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-3'>
                     <p className='text-sm '>/ Connect With me</p>
-                    <div className='flex gap-5 '>
+                    <div className='flex gap-4 '>
                         <a href="https://www.linkedin.com/in/zenen-contreras-royero-726523259" target='_blanck'>
                             <div className='px-4 py-1.5 rounded-full bg-neutral-900 text-[#FAFAFF] outline-2 outline-blue-500/100 transition-all text-xs backdrop-blur-3xl whitespace-nowrap hover:text-[#3b82f6] md:text-sm cursor-pointer flex gap-2'>
-                                <img src="/linkedin-svgrepo-com.svg" alt="LinkedIn Icon" className='w-4' />
+                                <img src="/Connect//linkedin-svgrepo-com.svg" alt="LinkedIn Icon" className='w-4' />
                                 <span >Linkedin</span>
                             </div>
                         </a>
                         <a href="https://github.com/zenencontreras" target='_blanck'>
                             <div className='px-4 py-1.5 rounded-full bg-neutral-900 text-[#FAFAFF] outline-2 outline-purple-500/100 transition-all text-xs backdrop-blur-3xl whitespace-nowrap hover:text-purple-500 md:text-sm cursor-pointer flex gap-2'>
-                                <img src="/github-svgrepo-com.svg" alt="Github Icon" className='w-4' />
+                                <img src="/Connect//github-svgrepo-com.svg" alt="Github Icon" className='w-4' />
                                 <span >Github</span>
                             </div>
                         </a>
                         <a href="https://www.linkedin.com/in/zenen-contreras-royero-726523259" target='_blanck'>
                             <div className='px-4 py-1.5 rounded-full bg-neutral-900 text-[#FAFAFF] outline-2 outline-blue-500/100 transition-all text-xs backdrop-blur-3xl whitespace-nowrap hover:text-[#3b82f6] md:text-sm cursor-pointer flex gap-2'>
-                                <img src="/resume.svg" alt="Resume Icon" className='w-4 fill-white' />
+                                <img src="/Connect/resume.svg" alt="Resume Icon" className='w-4 fill-white' />
                                 <span >Resume</span>
                             </div>
                         </a>
