@@ -16,7 +16,7 @@ function NavBar () {
         <nav className="text-[#FAFAFF] bg-[#090a0c] fixed top-0 w-full max-w-[1100px] py-5 px-4 sm:px-6 lg:px-10 flex items-center justify-between">
             <div className="flex flex-row items-center gap-2 font-bold">
                 <img 
-                    src="/ImagenYo.png" 
+                    src="/ImagenYo.jpg" 
                     alt="Zenen Contreras" 
                     className="w-10 sm:w-12 rounded-2xl"
                 />

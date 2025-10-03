@@ -32,7 +32,7 @@ function Home () {
 
                 {/* Títulos principales */}
                 <div className="py-2 font-semibold text-3xl md:text-5xl lg:text-4xl">
-                    <h1 className="mb-2">Hey, I'm Zenen</h1>
+                    <h1 className="mb-2">Hey, I'm Zenen.</h1>
 
                     <div className='flex flex-wrap gap-2 sm:gap-3 items-baseline'>
                         <h2 className="whitespace-nowrap">I Craft</h2>
