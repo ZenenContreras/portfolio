@@ -4,7 +4,7 @@ import Home from './components/Home'
 
 function App() {
   return (
-    <div className='flex bg-[#090a0c] flex-col justify-center items-center'>
+    <div className='min-h-screen w-full overflow-x-hidden bg-[#090a0c] flex flex-col items-center'>
       <NavBar/>
       <Home/>
     </div>

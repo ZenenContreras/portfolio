@@ -1,12 +1,106 @@
+import TextType from './ui/TextType';
+import { IconCloud } from "./ui/icon-cloud"
+
 function Home () {
+    const slugs = [
+        "typescript",
+        "javascript",
+        "java",
+        "react",
+        "html5",
+        "css3",
+        "nodedotjs",
+        "express",
+        "nextdotjs",
+        "postgresql",
+        "vercel",
+        "jest",
+        "docker",
+        "git",
+        "github",
+        "visualstudiocode",
+        "figma",
+    ]
+
+    const images = slugs.map(
+        (slug) => `https://cdn.simpleicons.org/${slug}/:dark_mode_color?`
+    )
+
     return (
-        <div className=" lg:w-[900px] py-20">
-            <div className="bg-[#090a0c] py-1.5 px-3 rounded-2xl w-fit flex flex-row items-center gap-2 justify-between">
-                <span class=" absolute inline-flex size-2 rounded-full bg-green-500"></span>
-                <span class=" relative inline-flex size-2 rounded-full animate-ping bg-green-500"></span>
-                <span className="text-sm">Open To Work</span>
+        <section className='text-[#FAFAFF] w-full max-w-[1100px] mt-16 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-10 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 lg:gap-12'>
+            {/* Contenido de texto */}
+            <div className="w-full lg:w-auto flex flex-col gap-6 sm:gap-8">
+                {/* Badge Open to Work */}
+                <div className="bg-[#1a1b1b] py-1.5 px-3 rounded-2xl w-fit flex flex-row items-center gap-2">
+                    <span className="absolute inline-flex size-2 rounded-full bg-green-500"></span>
+                    <span className="relative inline-flex size-2 rounded-full animate-ping bg-green-500"></span>
+                    <span className="text-xs sm:text-sm">Open To Work</span>
+                </div>
+
+                {/* Títulos principales */}
+                <div className="py-2 font-semibold text-xl sm:text-3xl md:text-4xl lg:text-4xl">
+                    <h1 className="mb-2">Hey, I'm Zenen</h1>
+
+                    <div className='flex flex-wrap gap-2 sm:gap-3 items-baseline'>
+                        <h2 className="whitespace-nowrap">I Craft</h2>
+                        <div className="min-w-0">
+                            <TextType 
+                                text={[
+                                    "Beautiful Interfaces",
+                                    "React Applications",
+                                    "Responsive Designs"
+                                ]}
+                                typingSpeed={75}
+                                pauseDuration={1500}
+                                showCursor={true}
+                                cursorCharacter="|"
+                                className='font-bold'
+                                textColors={['#3b82f6']}
+                            />
+                        </div>
+                    </div>
+                    <h1 className="mt-2">And Intuitive Web Apps</h1>
+                </div>
+
+                {/* Descripción */}
+                <div className='w-full max-w-prose'>
+                    <p className='text-xs sm:text-sm lg:text-base text-gray-300 leading-relaxed'>
+                        Frontend Developer building responsive, high-performance web applications.
+                        <br className="hidden sm:block" />
+                        <span className="sm:inline"> </span>
+                        Each project here reflects my commitment to clean code and exceptional user experience.
+                    </p>
+                </div>
+                <div className='flex flex-col gap-2'>
+                    <p className='text-sm '>/ Connect With me</p>
+                    <div className='flex gap-5 '>
+                        <a href="https://www.linkedin.com/in/zenen-contreras-royero-726523259" target='_blanck'>
+                            <div className='px-4 py-1.5 rounded-full bg-neutral-900 text-[#FAFAFF] outline-2 outline-blue-500/100 transition-all text-xs backdrop-blur-3xl whitespace-nowrap hover:text-[#3b82f6] md:text-sm cursor-pointer flex gap-2'>
+                                <img src="/linkedin-svgrepo-com.svg" alt="LinkedIn Icon" className='w-4' />
+                                <span >Linkedin</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/zenencontreras" target='_blanck'>
+                            <div className='px-4 py-1.5 rounded-full bg-neutral-900 text-[#FAFAFF] outline-2 outline-purple-500/100 transition-all text-xs backdrop-blur-3xl whitespace-nowrap hover:text-purple-500 md:text-sm cursor-pointer flex gap-2'>
+                                <img src="/github-svgrepo-com.svg" alt="Github Icon" className='w-4' />
+                                <span >Github</span>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/zenen-contreras-royero-726523259" target='_blanck'>
+                            <div className='px-4 py-1.5 rounded-full bg-neutral-900 text-[#FAFAFF] outline-2 outline-blue-500/100 transition-all text-xs backdrop-blur-3xl whitespace-nowrap hover:text-[#3b82f6] md:text-sm cursor-pointer flex gap-2'>
+                                <img src="/resume.svg" alt="Resume Icon" className='w-4 fill-white' />
+                                <span >Resume</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
+
+            {/* Icon Cloud */}
+            <div className='w-full sm:w-[400px] lg:w-[450px] flex justify-center lg:justify-end flex-shrink-0'>
+                <IconCloud images={images} />
+            </div>
+        </section>
     )
 }
 

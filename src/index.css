@@ -3,7 +3,6 @@
   font-family: 'Montserrat', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-
-h1,h2,h3,h4,h5,p,span,a{
-  color: #FAFAFF;
+button:hover {
+  cursor: pointer;
 }

@@ -1,6 +1,9 @@
 import '../App.css'
+import { useState } from 'react'
 
 function NavBar () {
+
+    const [isOpen, setIsOpen] = useState(false)
 
     const navLinks = [
         {"name" : "Home" , "Link": "/"},
@@ -10,22 +13,62 @@ function NavBar () {
     ]
 
     return (
-        <div className="py-5 lg:w-[900px] flex items-center justify-between">
+        <nav className="text-[#FAFAFF] bg-[#090a0c] fixed top-0 w-full max-w-[1100px] py-5 px-4 sm:px-6 lg:px-10 flex items-center justify-between">
             <div className="flex flex-row items-center gap-2 font-bold">
-                <img src="/ImagenYo.png" alt=""  className="w-12 rounded-2xl"/>
-                <h2 className="">Zenen.dev</h2>
-                <span className="text-[#d6d6d6] font-light text-xs">~Zenen Contreras</span>
+                <img 
+                    src="/ImagenYo.png" 
+                    alt="Zenen Contreras" 
+                    className="w-10 sm:w-12 rounded-2xl"
+                />
+                <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+                    <h2 className="text-sm sm:text-base text-[#FAFAFF]">Zenen.dev</h2>
+                    <span className="text-[#d6d6d6] font-light text-[10px] sm:text-xs">
+                        ~Zenen Contreras
+                    </span>
+                </div>
             </div>
 
-            <div className="hidden lg:flex flex-row items-center justify-between gap-4">
-                {navLinks.map((link,index)=>{
-                    return <a href={link.Link} key={index} className="text-black hover:text-blue-600">{link.name}</a>
-                })}
+            <div className="hidden lg:flex flex-row items-center gap-4">
+                {navLinks.map((link, index) => (
+                    <a 
+                        href={link.Link} 
+                        key={index} 
+                        className="text-[#FAFAFF] hover:text-blue-500 transition-colors duration-200"
+                    >
+                        {link.name}
+                    </a>
+                ))}
             </div>
 
+            {/* Menú móvil - hamburguesa (opcional para después) */}
+            <button onClick={()=>setIsOpen(!isOpen)} className="relative lg:hidden p-2 text-white" aria-label="Menu">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
 
-
-        </div>
+                        {/* Menú móvil con transición */}
+            <div className={`
+                absolute z-100 top-16 right-4 bg-[#1a1b1b] rounded-xl shadow-2xl
+                flex flex-col gap-4 p-5 min-w-[200px]
+                transition-all duration-300 ease-in-out lg:hidden
+                ${isOpen 
+                    ? 'opacity-100 translate-y-0 pointer-events-auto' 
+                    : 'opacity-0 -translate-y-2 pointer-events-none'
+                }
+            `}>
+                {navLinks.map((link, index) => (
+                    <a 
+                        href={link.Link} 
+                        key={index} 
+                        onClick={() => setIsOpen(false)}
+                        className="text-white hover:text-blue-500 transition-colors duration-200"
+                    >
+                        {link.name}
+                    </a>
+                ))}
+            </div>
+        </nav>
     )
 }
 
