@@ -25,7 +25,10 @@ function Skills (){
 
     return (
         <section className="text-[#FAFAFF] w-full max-w-[1100px] py-8 sm:py-16 px-4 sm:px-6 lg:px-10 flex flex-col items-center justify-center gap-6 lg:gap-12">
-            <h1 className="text-3xl lg:text-5xl font-bold">My Skills</h1>
+            <div className="flex flex-col gap-2">
+                <h1 className="text-3xl lg:text-5xl font-bold text-center">My Skills</h1>
+                <span className="text-sm text-[#95999d]">Technologies I use to build scalable, performant web applications.</span>
+            </div>
             <div className="grid grid-cols-2 gap-y-5 gap-x-6 lg:gap-x-30">
                 {displaySkills.map((skills, index)=>{
                     const isNewSkill = index >= initialDisplay && showAll
@@ -43,7 +46,7 @@ function Skills (){
             </div>
 
             {skills.length > initialDisplay && (
-                <button onClick={()=>setshowAll(!showAll)} className="text-xs lg:text-sm px-6 py-2 bg-[#141414] rounded-md flex items-center gap-2">
+                <button onClick={()=>setshowAll(!showAll)} className="text-xs lg:text-sm px-6 py-2 bg-[#141414] rounded-md flex items-center gap-2 hover:scale-103 transition duration-250 ease-in-out">
                     {showAll ? 'Show Less' : `Show more (${skills.length - initialDisplay } more)`}
                     <svg 
                         className={`w-4 h-4 transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`} 
