@@ -2,6 +2,7 @@ import './index.css'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
 import Skills from './components/Skills'
+import Projects from './components/Projects'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <NavBar/>
       <Home/>
       <Skills/>
+      <Projects/>
     </div>
 
   )

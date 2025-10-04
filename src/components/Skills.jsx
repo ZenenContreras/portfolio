@@ -24,7 +24,7 @@ function Skills (){
     const displaySkills = showAll ? skills : skills.slice(0, initialDisplay)
 
     return (
-        <section className="text-[#FAFAFF] w-full max-w-[1100px] py-8 sm:py-12 px-4 sm:px-6 lg:px-10 flex flex-col items-center justify-center gap-6 lg:gap-12">
+        <section className="text-[#FAFAFF] w-full max-w-[1100px] py-8 sm:py-16 px-4 sm:px-6 lg:px-10 flex flex-col items-center justify-center gap-6 lg:gap-12">
             <h1 className="text-3xl lg:text-5xl font-bold">My Skills</h1>
             <div className="grid grid-cols-2 gap-y-5 gap-x-6 lg:gap-x-30">
                 {displaySkills.map((skills, index)=>{
