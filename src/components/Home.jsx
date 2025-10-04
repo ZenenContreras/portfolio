@@ -17,7 +17,8 @@ function Home () {
         "/SkillsLogo/vercel.svg",
         "/SkillsLogo/supabase.svg",
         "/SkillsLogo/github.svg",
-        "/SkillsLogo/git.svg"
+        "/SkillsLogo/git.svg",
+        "/SkillsLogo/stripe.svg"
     ]
 
 

@@ -18,7 +18,8 @@ function Skills (){
         {"name": "PostgreSQL", "icon": "/SkillsLogo/postgresql.svg", "description": "Database"},
         {"name": "Node.js", "icon": "/SkillsLogo/nodejs.svg", "description": "JavaScript Runtime"},
         {"name": "Supabase", "icon": "/SkillsLogo/supabase.svg", "description": "Backend Platform"},
-        {"name": "Vercel", "icon": "/SkillsLogo/vercel.svg", "description": "Deployment Platform"}
+        {"name": "Vercel", "icon": "/SkillsLogo/vercel.svg", "description": "Deployment Platform"},
+        {"name": "Stripe", "icon": "/SkillsLogo/stripe.svg", "description": "Payment Integration"},
     ]
 
     const displaySkills = showAll ? skills : skills.slice(0, initialDisplay)
