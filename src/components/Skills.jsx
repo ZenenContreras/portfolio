@@ -26,12 +26,12 @@ function Skills (){
     return (
         <section className="text-[#FAFAFF] w-full max-w-[1100px] py-8 sm:py-12 px-4 sm:px-6 lg:px-10 flex flex-col items-center justify-center gap-6 lg:gap-12">
             <h1 className="text-3xl lg:text-5xl font-bold">My Skills</h1>
-            <div className="grid grid-cols-2 gap-y-5 gap-x-30 transition-all ease-in-out duration-300">
+            <div className="grid grid-cols-2 gap-y-5 gap-x-6 lg:gap-x-30">
                 {displaySkills.map((skills, index)=>{
                     const isNewSkill = index >= initialDisplay && showAll
 
                     return(
-                        <div className={`p-4 py-3 text-left flex flex-row gap-2 items-centerhover:bg-[#141414] rounded-md cursor-pointer transition-all duration-300 ${isNewSkill  ? 'animate-fadeInUp' : 'opacity-100'}`} key={index}>
+                        <div className={`p-4 py-3 text-left flex flex-row gap-2 items-center hover:bg-[#141414] rounded-md cursor-pointer ${isNewSkill  ? 'animate-fadeInUp' : 'opacity-100'}`} key={index}>
                             <img src={skills.icon} className='w-6 lg:w-10' alt="" />
                             <div className="flex flex-col ">
                                 <h3 className="text-sm lg:text-lg">{skills.name}</h3>
@@ -43,7 +43,7 @@ function Skills (){
             </div>
 
             {skills.length > initialDisplay && (
-                <button onClick={()=>setshowAll(!showAll)} className="px-6 py-2 bg-[#141414] rounded-md flex items-center gap-2">
+                <button onClick={()=>setshowAll(!showAll)} className="text-xs lg:text-sm px-6 py-2 bg-[#141414] rounded-md flex items-center gap-2">
                     {showAll ? 'Show Less' : `Show more (${skills.length - initialDisplay } more)`}
                     <svg 
                         className={`w-4 h-4 transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`} 
