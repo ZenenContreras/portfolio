@@ -13,7 +13,7 @@ function NavBar () {
     ]
 
     return (
-        <nav className="text-[#FAFAFF] bg-[#090a0c] fixed top-0 w-full max-w-[1100px] py-5 px-4 sm:px-6 lg:px-10 flex items-center justify-between">
+        <nav className="text-[#FAFAFF] bg-[#090a0c] fixed top-0 w-full max-w-[1100px] py-5 px-4 sm:px-6 lg:px-10 flex items-center justify-between z-100">
             <div className="flex flex-row items-center gap-2 font-bold">
                 <img 
                     src="/ImagenYo.jpg" 

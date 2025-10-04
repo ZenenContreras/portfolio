@@ -16,6 +16,8 @@ function Home () {
         "/SkillsLogo/postgresql.svg",
         "/SkillsLogo/vercel.svg",
         "/SkillsLogo/supabase.svg",
+        "/SkillsLogo/github.svg",
+        "/SkillsLogo/git.svg"
     ]
 
 
@@ -65,7 +67,6 @@ function Home () {
                     </p>
                 </div>
                 <div className='flex flex-col gap-3'>
-                    <p className='text-sm '>/ Connect With me</p>
                     <div className='flex gap-4 '>
                         <a href="https://www.linkedin.com/in/zenen-contreras-royero-726523259" target='_blanck'>
                             <div className='px-4 py-1.5 rounded-full bg-neutral-900 text-[#FAFAFF] outline-2 outline-blue-500/100 transition-all text-xs backdrop-blur-3xl whitespace-nowrap hover:text-[#3b82f6] md:text-sm cursor-pointer flex gap-2'>
