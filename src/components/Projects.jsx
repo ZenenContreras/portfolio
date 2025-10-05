@@ -3,7 +3,9 @@ import Carousel from "./ui/Carousel"
 function Projects () {
 
     const projects = [
-        {"name": "Tout Á Un Clic La | Full-stack e-commerce", "Description": "Latin products in Montreal. Scaled to 100+ active users with real-time inventory tracking, secure payment integration, and optimized performance." , "Tech" : ["Next.js", "Express.js", "Tailwind CSS", "Supabase"],"icon" : ["/SkillsLogo/nextjs.svg" , "/SkillsLogo/express.svg", "/SkillsLogo/tailwindcss.svg", "/SkillsLogo/supabase.svg"], "Link": "https://toutaunclicla.com"},
+        {"name": "Tout Á Un Clic La Full-stack e-commerce", "Description": "Latin products in Montreal. Scaled to 100+ active users with real-time inventory tracking, secure payment integration, and optimized performance." , "Tech" : [{"name":"Next.js", "icon": "/SkillsLogo/nextjs.svg", "color": "#141414"}, {"name":"Express.js", "icon" : "/SkillsLogo/express.svg","color": "#141414"}, {"name":"Tailwind CSS", "icon": "/SkillsLogo/tailwindcss.svg", "color": "#003159"}, {"name":"Supabase", "icon" :"/SkillsLogo/supabase.svg", "color": "#1F4A1C" }], "Link": "https://toutaunclicla.com", "Github" : ""},
+
+        {"name": "Weather App", "Description": "Weather application delivering real-time forecasts for any city worldwide. Features 7-day predictions, hourly breakdowns, and instant °C/°F conversion." , "Tech" : [{"name":"React.js", "icon": "/SkillsLogo/react.svg", "color": "#001629"}, {"name":"JavaScript", "icon" : "/SkillsLogo/javascriptdark.svg","color": "#4B4206"}, {"name":"Tailwind CSS", "icon": "/SkillsLogo/tailwindcss.svg", "color": "#003159"},{"name":"Open-Meto", "icon": "/SkillsLogo/api.svg", "color": "#141414"}], "Link": "https://weather-f0wgdq0yz-zenen-contreras-projects.vercel.app", "Github" : "https://github.com/ZenenContreras/weatherApp"},        
     ]
 
     return (
@@ -20,14 +22,35 @@ function Projects () {
                             <Carousel />
                             <div className="flex flex-col w-62 gap-3">
                                 <h1 className="font-bold text-2xl text-left">{projects.name}</h1>
+                                <div className="grid grid-cols-2 gap-2">
+                                    {projects.Tech.map((tech)=>{
+                                        return (
+                                            <div className={`flex flex-row items-center gap-2 p-2 rounded-lg`} style={{ backgroundColor: tech.color }}>
+                                                <img src={tech.icon} alt={tech.name} className="w-4" />
+                                                <span className="text-xs">{tech.name}</span>
+                                            </div>
+                                        )
+                                    })}
+                                </div>
                                 <p className="text-sm text-[#95999d]">{projects.Description}</p>
-                                <button className="p-2 bg-[#141414] rounded-lg border-1 ">
-                                    <a href={projects.Link} className="flex flex-row items-center justify-center gap-4">
-                                        <img src="/link.svg" className="w-6" alt="" />
-                                        <span>Source</span>
-                                    </a>
-                                </button>
+                                <div className="flex flex-row gap-1 items-center justify-center">
+                                    {projects.Github && (
+                                        <button className="p-2 bg-[#141414] rounded-lg border-1 w-full">
+                                            <a href={projects.Github} target="_blanck" className="flex flex-row items-center justify-center gap-4">
+                                                <img src="/SkillsLogo/github.svg" className="w-6" alt="" />
+                                                <span className="text-sm lg:text-md">Code</span>
+                                            </a>
+                                        </button>    
+                                    )}
 
+                                    <button className="p-2 bg-[#141414] rounded-lg border-1 w-full">
+                                        <a href={projects.Link} target="_blanck" className="flex flex-row items-center justify-center gap-4">
+                                            <img src="/link.svg" className="w-6" alt="" />
+                                            <span className="text-sm lg:text-md">Source</span>
+                                        </a>
+                                    </button>
+
+                                </div>
                             </div>
                         </div>
                     )
