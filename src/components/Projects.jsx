@@ -20,7 +20,7 @@ function Projects () {
                     return(
                         <div key={index} className="flex flex-col lg:flex-row gap-6 lg:gap-22 p-3 items-center ">
                             <Carousel baseWidth={350} items={projects.images}/>
-                            <div className="flex flex-col w-62 gap-3">
+                            <div className="w-[300px] flex flex-col gap-3">
                                 <h1 className="font-bold text-2xl text-left">{projects.name}</h1>
                                 <div className="grid grid-cols-2 gap-2">
                                     {projects.Tech.map((tech)=>{
