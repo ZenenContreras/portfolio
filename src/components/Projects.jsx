@@ -3,9 +3,26 @@ import Carousel from "./ui/Carousel"
 function Projects () {
 
     const projects = [
-        {"name": "Tout Á Un Clic La Full-stack e-commerce", "Description": "Latin products in Montreal. Scaled to 100+ active users with real-time inventory tracking, secure payment integration, and optimized performance." , "Tech" : [{"name":"Next.js", "icon": "/SkillsLogo/nextjs.svg", "color": "#141414"}, {"name":"Express.js", "icon" : "/SkillsLogo/express.svg","color": "#141414"}, {"name":"Tailwind CSS", "icon": "/SkillsLogo/tailwindcss.svg", "color": "#003159"}, {"name":"Supabase", "icon" :"/SkillsLogo/supabase.svg", "color": "#1F4A1C" }], "Link": "https://toutaunclicla.com", "Github" : "", "images" : [{"images":"/projectsMockUp/MockUpToutAunClicLa.jpeg"}, {"images":"/projectsMockUp/MockUpToutAunClicLaMobile.jpeg"}]},
+        {"name": "Tout Á Un Clic La - Full-stack e-commerce", "Description": "Latin products in Montreal. Scaled to 100+ active users with real-time inventory tracking, secure payment integration, and optimized performance." , "Tech" : [{"name":"Next.js", "icon": "/SkillsLogo/nextjs.svg", "color": "#141414"}, {"name":"Express.js", "icon" : "/SkillsLogo/express.svg","color": "#141414"}, {"name":"Tailwind CSS", "icon": "/SkillsLogo/tailwindcss.svg", "color": "#003159"}, {"name":"Supabase", "icon" :"/SkillsLogo/supabase.svg", "color": "#1F4A1C" }], "Link": "https://toutaunclicla.com", "Github" : "", "images" : [{"images":"/projectsMockUp/MockUpToutAunClicLa.jpeg"}, {"images":"/projectsMockUp/MockUpToutAunClicLaMobile.jpeg"}]},
 
         {"name": "Weather App", "Description": "Weather application delivering real-time forecasts for any city worldwide. Features 7-day predictions, hourly breakdowns, and instant °C/°F conversion." , "Tech" : [{"name":"React.js", "icon": "/SkillsLogo/react.svg", "color": "#001629"}, {"name":"JavaScript", "icon" : "/SkillsLogo/javascriptdark.svg","color": "#4B4206"}, {"name":"Tailwind CSS", "icon": "/SkillsLogo/tailwindcss.svg", "color": "#003159"},{"name":"Open-Meto", "icon": "/SkillsLogo/api.svg", "color": "#141414"}], "Link": "https://weather-f0wgdq0yz-zenen-contreras-projects.vercel.app", "Github" : "https://github.com/ZenenContreras/weatherApp", "images" : [{"images":"/projectsMockUp/MockUpWeatherApp.jpeg"}, {"images":"/projectsMockUp/MockUpWeatherAppMobile.jpeg"}]},        
+
+        {
+            "name": "Fabio Canchila - Business Consulting Platform", 
+            "Description": "Professional consulting platform offering business advisory services, educational resources, and digital products. Features service showcase and content management for books and courses.", 
+            "Tech": [
+                {"name":"React", "icon": "/SkillsLogo/react.svg", "color": "#001629"}, 
+                {"name":"JavaScript", "icon": "/SkillsLogo/javascriptdark.svg", "color": "#4B4206"}, 
+                {"name":"Tailwind CSS", "icon": "/SkillsLogo/tailwindcss.svg", "color": "#003159"}, 
+                {"name":"Supabase", "icon": "/SkillsLogo/supabase.svg", "color": "#1F4A1C"}
+            ], 
+            "Link": "https://fabiocanchila.com", 
+            "Github": "https://github.com/ZenenContreras/fabiocanchila", 
+            "images": [
+                {"images":"/projectsMockUp/MockUpFabioCanchila.jpeg"}, 
+                {"images":"/projectsMockUp/MockUpFabioCanchilaMobile.jpeg"}
+            ]
+        }
     ]
 
     return (
@@ -32,7 +49,7 @@ function Projects () {
                                         )
                                     })}
                                 </div>
-                                <p className="text-sm text-[#95999d]">{projects.Description}</p>
+                                <p className="text-sm text-[#95999d] text-justify">{projects.Description}</p>
                                 <div className="flex flex-row gap-1 items-center justify-center">
                                     {projects.Github && (
                                         <button className="p-2 hover:scale-102 transition duration-80 bg-[#141414] rounded-lg border-1 w-full">
