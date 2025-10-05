@@ -43,7 +43,8 @@ function Home () {
                             <TextType 
                                 text={[
                                     "Modern",
-                                    "Intuitive",
+                                    "Scalable",
+                                    "Optimized",
                                     "Dynamic",
                                     "Efficient"
                                 ]}
