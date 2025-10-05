@@ -34,7 +34,7 @@ function Home () {
                 </div>
 
                 {/* Títulos principales */}
-                <div className="py-2 font-semibold text-3xl md:text-5xl lg:text-4xl">
+                <div className="py-2 font-semibold text-3xl md:text-4xl lg:text-4xl">
                     <h1 className="mb-2">Hey, I'm Zenen.</h1>
 
                     <div className='flex flex-wrap gap-2 sm:gap-3 items-baseline'>
@@ -42,9 +42,10 @@ function Home () {
                         <div className="min-w-0">
                             <TextType 
                                 text={[
-                                    "Beautiful Interfaces",
-                                    "React Applications",
-                                    "Responsive Designs"
+                                    "Modern",
+                                    "Intuitive",
+                                    "Dynamic",
+                                    "Efficient"
                                 ]}
                                 typingSpeed={75}
                                 pauseDuration={1500}
