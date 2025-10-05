@@ -7,31 +7,14 @@ const DEFAULT_ITEMS = [
     title: 'Text Animations',
     description: 'Cool text animations for your projects.',
     id: 1,
-    icon: ""
+    icon: '',
+    images: '/projectsMockUp/MockUpToutAunClicLa.png'
   },
   {
     title: 'Animations',
     description: 'Smooth animations for your projects.',
     id: 2,
-    icon: ""
-  },
-  {
-    title: 'Components',
-    description: 'Reusable components for your projects.',
-    id: 3,
-    icon: ""
-  },
-  {
-    title: 'Backgrounds',
-    description: 'Beautiful backgrounds and patterns for your projects.',
-    id: 4,
-    icon: ""
-  },
-  {
-    title: 'Common UI',
-    description: 'Common UI components are coming soon!',
-    id: 5,
-    icon: ""
+    icon: '',
   }
 ];
 
@@ -138,7 +121,8 @@ export default function Carousel({
       style={{
         width: `${baseWidth}px`,
         ...(round && { height: `${baseWidth}px` })
-      }}>
+      }}
+    >
       <motion.div
         className="flex"
         drag="x"
@@ -153,7 +137,8 @@ export default function Carousel({
         onDragEnd={handleDragEnd}
         animate={{ x: -(currentIndex * trackItemOffset) }}
         transition={effectiveTransition}
-        onAnimationComplete={handleAnimationComplete}>
+        onAnimationComplete={handleAnimationComplete}
+      >
         {carouselItems.map((item, index) => {
           const range = [-(index + 1) * trackItemOffset, -index * trackItemOffset, -(index - 1) * trackItemOffset];
           const outputRange = [90, 0, -90];
@@ -162,7 +147,7 @@ export default function Carousel({
           return (
             <motion.div
               key={index}
-              className={`relative shrink-0 flex flex-col ${
+              className={`h-full aspect-[4/3] bg-cover bg-center relative shrink-0 flex flex-col ${
                 round
                   ? 'items-center justify-center text-center bg-[#060010] border-0'
                   : 'items-start justify-between bg-[#222] border border-[#222] rounded-[12px]'
@@ -171,25 +156,17 @@ export default function Carousel({
                 width: itemWidth,
                 height: round ? itemWidth : '100%',
                 rotateY: rotateY,
+                backgroundImage: item.images ? `url(${item.images})` : 'none',
+
                 ...(round && { borderRadius: '50%' })
               }}
-              transition={effectiveTransition}>
-              <div className={`${round ? 'p-0 m-0' : 'mb-4 p-5'}`}>
-                <span
-                  className="flex h-[28px] w-[28px] items-center justify-center rounded-full bg-[#060010]">
-                  {item.icon}
-                </span>
-              </div>
-              <div className="p-5">
-                <div className="mb-1 font-black text-lg text-white">{item.title}</div>
-                <p className="text-sm text-white">{item.description}</p>
-              </div>
+              transition={effectiveTransition}
+            >
             </motion.div>
           );
         })}
       </motion.div>
-      <div
-        className={`flex w-full justify-center ${round ? 'absolute z-20 bottom-12 left-1/2 -translate-x-1/2' : ''}`}>
+      <div className={`flex w-full justify-center ${round ? 'absolute z-20 bottom-12 left-1/2 -translate-x-1/2' : ''}`}>
         <div className="mt-4 flex w-[150px] justify-between px-8">
           {items.map((_, index) => (
             <motion.div
@@ -207,7 +184,8 @@ export default function Carousel({
                 scale: currentIndex % items.length === index ? 1.2 : 1
               }}
               onClick={() => setCurrentIndex(index)}
-              transition={{ duration: 0.15 }} />
+              transition={{ duration: 0.15 }}
+            />
           ))}
         </div>
       </div>
