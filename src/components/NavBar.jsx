@@ -6,14 +6,14 @@ function NavBar () {
     const [isOpen, setIsOpen] = useState(false)
 
     const navLinks = [
-        {"name" : "Home" , "Link": "/"},
-        {"name" : "Skills" , "Link": "/Skills"},
-        {"name" : "Projects" , "Link": "/Projects"},
+        {"name" : "Home" , "Link": "#home"},
+        {"name" : "Skills" , "Link": "#skills"},
+        {"name" : "Projects" , "Link": "#projects"},
         {"name" : "Contact" , "Link": "/Contact"},
     ]
 
     return (
-        <nav className="text-[#FAFAFF] bg-[#090a0c] fixed top-0 w-full max-w-[1100px] py-5 px-4 sm:px-6 lg:px-10 flex items-center justify-between z-100">
+        <nav className="text-[#FAFAFF] bg-[#090a0c] fixed top-0 w-full max-w-[1100px] py-4 sm:py-5 px-4 sm:px-6 lg:px-10 flex items-center justify-between z-100">
             <div className="flex flex-row items-center gap-2 font-bold">
                 <img 
                     src="/ImagenYo.jpg" 

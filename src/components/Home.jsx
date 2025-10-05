@@ -23,7 +23,7 @@ function Home () {
 
 
     return (
-        <section className='text-[#FAFAFF] w-full max-w-[1100px] mt-16 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-10 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-6 lg:gap-12'>
+        <section id='home' className='text-[#FAFAFF] w-full max-w-[1100px] pt-22 lg:py-34 px-4 sm:px-6 lg:px-10 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-6 lg:gap-12'>
             {/* Contenido de texto */}
             <div className="w-full lg:w-auto flex flex-col gap-6 sm:gap-8">
                 {/* Badge Open to Work */}
