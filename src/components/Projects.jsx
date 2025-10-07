@@ -22,6 +22,21 @@ function Projects () {
                 {"images":"/projectsMockUp/MockUpFabioCanchila.jpeg"}, 
                 {"images":"/projectsMockUp/MockUpFabioCanchilaMobile.jpeg"}
             ]
+        },
+        {
+            "name": "Nazly Royero - Personal Transformation Coaching", 
+            "Description": "Coaching platform specializing in personal and professional transformation through the 'Método Estrella'. Features blog content, service offerings, and integrated scheduling system for one-on-one sessions.", 
+            "Tech": [
+                {"name":"React", "icon": "/SkillsLogo/react.svg", "color": "#001629"}, 
+                {"name":"JavaScript", "icon": "/SkillsLogo/javascriptdark.svg", "color": "#4B4206"}, 
+                {"name":"Tailwind CSS", "icon": "/SkillsLogo/tailwindcss.svg", "color": "#003159"}
+            ], 
+            "Link": "https://nazlyroyero.com", 
+            "Github": "https://github.com/ZenenContreras/NazlyRoyero", 
+            "images": [
+                {"images":"/projectsMockUp/MockUpNazly.jpeg"}, 
+                {"images":"/projectsMockUp/MockUpNazlyMobile.jpeg"}
+            ]
         }
     ]
 
