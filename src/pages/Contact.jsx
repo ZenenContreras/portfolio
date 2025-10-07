@@ -36,7 +36,7 @@ const Contact = () => {
                     <input required name='email' type="text" placeholder='Your@emailhere.com' className='border-1 border-white rounded-md px-7 py-2 w-full ' />
                 </div>
                 <div className='flex flex-col gap-2 w-full'>
-                    <label htmlFor="">subject </label>
+                    <label htmlFor="">Subject </label>
                     <input required name='subject' type="text" placeholder='Brief description of your inquiry' className='border-1 border-white rounded-md px-7 py-2 w-full' />
                 </div>
                 <div className='flex flex-col gap-2 w-full'>
