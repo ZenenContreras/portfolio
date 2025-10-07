@@ -1,42 +1,73 @@
 import '../App.css'
 import { useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+
 
 function NavBar () {
 
     const [isOpen, setIsOpen] = useState(false)
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const navLinks = [
-        {"name" : "Home" , "Link": "#home"},
-        {"name" : "Skills" , "Link": "#skills"},
-        {"name" : "Projects" , "Link": "#projects"},
-        {"name" : "Contact" , "Link": "/Contact"},
+        {"name" : "Home" , "section": "home"},
+        {"name" : "Skills" , "section": "skills"},
+        {"name" : "Projects" , "section": "projects"},
+        {"name" : "Contact" , "path": "/Contact"},
     ]
+
+        const handleSectionClick = (section) => {
+        // Si NO estamos en homepage, ir primero a homepage
+        if (location.pathname !== '/') {
+            navigate('/')
+            setTimeout(() => {
+                document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' })
+            }, 100)
+        } else {
+            // Ya estamos en homepage, solo hacer scroll
+            document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' })
+        }
+        setIsOpen(false)
+    }
 
     return (
         <nav className="text-[#FAFAFF] bg-[#090a0c] fixed top-0 w-full max-w-[1100px] py-4 sm:py-5 px-4 sm:px-6 lg:px-10 flex items-center justify-between z-100">
-            <div className="flex flex-row items-center gap-2 font-bold">
-                <img 
-                    src="/ImagenYo.jpg" 
-                    alt="Zenen Contreras" 
-                    className="w-10 sm:w-12 rounded-2xl"
-                />
-                <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
-                    <h2 className="text-sm sm:text-base text-[#FAFAFF]">Zenen.dev</h2>
-                    <span className="text-[#d6d6d6] font-light text-[10px] sm:text-xs">
-                        ~Zenen Contreras
-                    </span>
+            <Link  to='/'>
+                <div className="flex flex-row items-center gap-2 font-bold">
+                    <img 
+                        src="/ImagenYo.jpg" 
+                        alt="Zenen Contreras" 
+                        className="w-10 sm:w-12 rounded-2xl"
+                        />
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+                        <h2 className="text-sm sm:text-base text-[#FAFAFF]">Zenen.dev</h2>
+                        <span className="text-[#d6d6d6] font-light text-[10px] sm:text-xs">
+                            ~Zenen Contreras
+                        </span>
+                    </div>
                 </div>
-            </div>
+            </Link>
 
             <div className="hidden lg:flex flex-row items-center gap-4">
                 {navLinks.map((link, index) => (
-                    <a 
-                        href={link.Link} 
-                        key={index} 
-                        className="text-[#FAFAFF] hover:text-blue-500 transition-colors duration-200"
-                    >
-                        {link.name}
-                    </a>
+                    link.path ? (
+                        <Link 
+                            key={index}
+                            to={link.path}
+                            onClick={() => setIsOpen(false)}
+                            className="text-white hover:text-blue-500 transition-colors duration-200"
+                        >
+                            {link.name}
+                        </Link>
+                    ) : (
+                        <button
+                            key={index}
+                            onClick={() => handleSectionClick(link.section)}
+                            className="text-white text-left hover:text-blue-500 transition-colors duration-200"
+                        >
+                            {link.name}
+                        </button>
+                    )
                 ))}
             </div>
 
@@ -47,7 +78,7 @@ function NavBar () {
                 </svg>
             </button>
 
-                        {/* Menú móvil con transición */}
+            {/* Menú móvil con transición */}
             <div className={`
                 absolute z-100 top-16 right-4 bg-[#1a1b1b] rounded-xl shadow-2xl
                 flex flex-col gap-4 p-5 min-w-[200px]
@@ -59,7 +90,7 @@ function NavBar () {
             `}>
                 {navLinks.map((link, index) => (
                     <a 
-                        href={link.Link} 
+                        href={link.section ? `/#${link.section} `: link.path} 
                         key={index} 
                         onClick={() => setIsOpen(false)}
                         className="text-white hover:text-blue-500 transition-colors duration-200"

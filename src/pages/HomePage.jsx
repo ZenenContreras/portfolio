@@ -7,8 +7,10 @@ import Projects from '../components/Projects.jsx'
 export default function HomePage() {
     return (
         <>
-            <Home />
-            <Skills/>
+            <Home/>
+            
+            <Skills />
+            
             <Projects />
         </>
     )
