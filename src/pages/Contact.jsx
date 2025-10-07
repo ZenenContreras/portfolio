@@ -1,8 +1,8 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 import emailjs from '@emailjs/browser'
 
 const Contact = () => {
-
+    const [send, setSend] = useState(false)
     const refForm = useRef()
 
     const handleSubmit = (event) =>{
@@ -18,7 +18,8 @@ const Contact = () => {
 
         if (refForm.current) {
             refForm.current.reset();
-    }
+        }
+        setSend(true)
     }
 
 
@@ -43,6 +44,11 @@ const Contact = () => {
                     <textarea required name='message' maxLength={500} type="text" placeholder='Tell me about the project, timeline, and how I can help...' className='border-1 border-white rounded-md px-7 py-2 w-full' rows={5} cols={30} />
                 </div>
 
+                {send &&(
+                    <div className='text-green-500'>
+                        <p>Message sent!</p>
+                    </div>
+                )}
                 
 
                 <div className='w-full justify-center flex items-center'>
