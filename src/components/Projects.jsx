@@ -4,7 +4,7 @@ function Projects () {
 
     const projects = [
         {
-            "name": "Tout Á Un Clic La - Full-stack e-commerce", 
+            "name": "Tout Á Un Clic La | Full-stack e-commerce", 
             "Description": "Latin products in Montreal. Scaled to 100+ active users with real-time inventory tracking, secure payment integration, and optimized performance." , "Tech" : [
                 {"name":"Next.js", "icon": "/SkillsLogo/nextjs.svg", "color": "#141414"}, 
                 {"name":"Express.js", "icon" : "/SkillsLogo/express.svg","color": "#141414"}, 
@@ -20,7 +20,7 @@ function Projects () {
                 {"images":"/projectsMockUp/Toutaunclicla/Cart.jpeg"}
             ]},
         {
-            "name": "Fabio Canchila - Business Consulting Platform", 
+            "name": "Fabio Canchila | Business Consulting Platform", 
             "Description": "Professional consulting platform offering business advisory services, educational resources, and digital products. Features service showcase and content management for books and courses.", 
             "Tech": [
                 {"name":"React", "icon": "/SkillsLogo/react.svg", "color": "#001629"}, 
@@ -36,7 +36,7 @@ function Projects () {
             ]
         },
         {
-            "name": "Nazly Royero - Personal Transformation Coaching", 
+            "name": "Nazly Royero | Personal Transformation Coaching", 
             "Description": "Coaching platform specializing in personal and professional transformation through the 'Método Estrella'. Features blog content, service offerings, and integrated scheduling system for one-on-one sessions.", 
             "Tech": [
                 {"name":"React", "icon": "/SkillsLogo/react.svg", "color": "#001629"}, 
@@ -52,7 +52,7 @@ function Projects () {
             ]
         },
         {
-            "name": "Weather App", 
+            "name": "WeatherNow | Global Forecast Dashboard ", 
             "Description": "Weather application delivering real-time forecasts for any city worldwide. Features 7-day predictions, hourly breakdowns, and instant °C/°F conversion." , 
             "Tech" : [
                 {"name":"React.js", "icon": "/SkillsLogo/react.svg", "color": "#001629"}, 
