@@ -83,7 +83,7 @@ function Home () {
                                 <span >Github</span>
                             </div>
                         </a>
-                        <a href="https://www.linkedin.com/in/zenen-contreras" target='_blanck'>
+                        <a href="/Connect/resume.pdf" download='ZenenContrerasResume.pdf'>
                             <div className='px-4 py-1.5 rounded-full bg-neutral-900 text-[#FAFAFF] outline-2 outline-blue-500/100 transition-all text-xs backdrop-blur-3xl whitespace-nowrap hover:text-[#3b82f6] md:text-sm cursor-pointer flex gap-2'>
                                 <img src="/Connect/resume.svg" alt="Resume Icon" className='w-4 fill-white' />
                                 <span >Resume</span>
