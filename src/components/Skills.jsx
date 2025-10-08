@@ -28,7 +28,7 @@ function Skills (){
         <section id="skills" className="text-[#FAFAFF] w-full max-w-[1100px] py-22 sm:py-24 px-4 sm:px-6 lg:px-10 flex flex-col items-center justify-center gap-6 lg:gap-12">
             <div className="flex flex-col gap-2">
                 <h1 className="text-3xl lg:text-5xl font-bold text-center">My Skills</h1>
-                <span className="text-sm text-[#95999d]">Technologies I use to build scalable, performant web applications.</span>
+                <span className="text-sm text-[#95999d] text-center">Technologies I use to build scalable, performant web applications.</span>
             </div>
             <div className="grid grid-cols-2 gap-y-5 gap-x-6 lg:gap-x-30">
                 {displaySkills.map((skills, index)=>{
