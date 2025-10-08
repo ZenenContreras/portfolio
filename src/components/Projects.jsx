@@ -3,7 +3,22 @@ import Carousel from "./ui/Carousel"
 function Projects () {
 
     const projects = [
-        {"name": "Tout Á Un Clic La - Full-stack e-commerce", "Description": "Latin products in Montreal. Scaled to 100+ active users with real-time inventory tracking, secure payment integration, and optimized performance." , "Tech" : [{"name":"Next.js", "icon": "/SkillsLogo/nextjs.svg", "color": "#141414"}, {"name":"Express.js", "icon" : "/SkillsLogo/express.svg","color": "#141414"}, {"name":"Tailwind CSS", "icon": "/SkillsLogo/tailwindcss.svg", "color": "#003159"}, {"name":"Supabase", "icon" :"/SkillsLogo/supabase.svg", "color": "#1F4A1C" }], "Link": "https://toutaunclicla.com", "Github" : "", "images" : [{"images":"/projectsMockUp/MockUpToutAunClicLa.jpeg"}, {"images":"/projectsMockUp/MockUpToutAunClicLaMobile.jpeg"}]},
+        {
+            "name": "Tout Á Un Clic La - Full-stack e-commerce", 
+            "Description": "Latin products in Montreal. Scaled to 100+ active users with real-time inventory tracking, secure payment integration, and optimized performance." , "Tech" : [
+                {"name":"Next.js", "icon": "/SkillsLogo/nextjs.svg", "color": "#141414"}, 
+                {"name":"Express.js", "icon" : "/SkillsLogo/express.svg","color": "#141414"}, 
+                {"name":"Tailwind CSS", "icon": "/SkillsLogo/tailwindcss.svg", "color": "#003159"}, 
+                {"name":"Supabase", "icon" :"/SkillsLogo/supabase.svg", "color": "#1F4A1C" }
+            ], 
+            "Link": "https://toutaunclicla.com", 
+            "Github" : "", 
+            "images" : [
+                {"images":"/projectsMockUp/MockUpToutAunClicLa.jpeg"}, 
+                {"images":"/projectsMockUp/MockUpToutAunClicLaMobile.jpeg"},
+                {"images":"/projectsMockUp/Toutaunclicla/Foods.jpeg"},
+                {"images":"/projectsMockUp/Toutaunclicla/Cart.jpeg"}
+            ]},
         {
             "name": "Fabio Canchila - Business Consulting Platform", 
             "Description": "Professional consulting platform offering business advisory services, educational resources, and digital products. Features service showcase and content management for books and courses.", 
@@ -32,6 +47,7 @@ function Projects () {
             "Github": "https://github.com/ZenenContreras/NazlyRoyero", 
             "images": [
                 {"images":"/projectsMockUp/MockUpNazly.jpeg"}, 
+                {"images":"/projectsMockUp/Nazlyroyero/blog.jpeg"}, 
                 {"images":"/projectsMockUp/MockUpNazlyMobile.jpeg"}
             ]
         },
