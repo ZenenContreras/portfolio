@@ -1,5 +1,8 @@
+import { Link } from 'react-router-dom';
 import TextType from './ui/TextType';
 import { IconCloud } from "./ui/icon-cloud"
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 function Home () {
     const images = [
@@ -23,11 +26,11 @@ function Home () {
 
 
     return (
-        <section id='home' className='text-[#FAFAFF] w-full max-w-[1100px] pt-22 lg:py-34 px-4 sm:px-6 lg:px-10 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-6 lg:gap-12'>
+        <section id='home' className='text-[#FAFAFF] w-full max-w-[1100px] pt-22 lg:py-34 px-4 sm:px-6 lg:px-10 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-6 lg:gap-12 animate-fade-in '>
             {/* Contenido de texto */}
-            <div className="w-full lg:w-auto flex flex-col gap-6 sm:gap-8">
+            <div className="w-full lg:w-auto flex flex-col gap-6 sm:gap-8 ">
                 {/* Badge Open to Work */}
-                <div className="bg-[#1a1b1b] py-1.5 px-3 rounded-2xl w-fit flex flex-row items-center gap-2">
+                <div className="bg-[#1a1b1b] py-1.5 px-3 rounded-lg w-fit flex flex-row items-center gap-2">
                     <span className="absolute inline-flex size-2 rounded-full bg-green-500"></span>
                     <span className="relative inline-flex size-2 rounded-full animate-ping bg-green-500"></span>
                     <span className="text-xs sm:text-sm">Open To Work</span>
@@ -72,29 +75,36 @@ function Home () {
                 <div className='flex flex-col gap-3'>
                     <div className='flex gap-4 '>
                         <a href="https://www.linkedin.com/in/zenen-contreras-royero-726523259" target='_blanck'>
-                            <div className='px-4 py-1.5 rounded-full bg-neutral-900 text-[#FAFAFF] outline-2 outline-blue-500/100 transition-all text-xs backdrop-blur-3xl whitespace-nowrap hover:text-[#3b82f6] md:text-sm cursor-pointer flex gap-2'>
+                            <div className='px-4 py-1.5 rounded-lg bg-neutral-900 text-[#FAFAFF] outline-2 outline-blue-500 transition-all text-xs backdrop-blur-3xl whitespace-nowrap hover:text-[#3b82f6] md:text-sm cursor-pointer flex gap-2'>
                                 <img src="/Connect//linkedin-svgrepo-com.svg" alt="LinkedIn Icon" className='w-4' />
                                 <span >Linkedin</span>
                             </div>
                         </a>
                         <a href="https://github.com/zenencontreras" target='_blanck'>
-                            <div className='px-4 py-1.5 rounded-full bg-neutral-900 text-[#FAFAFF] outline-2 outline-purple-500/100 transition-all text-xs backdrop-blur-3xl whitespace-nowrap hover:text-purple-500 md:text-sm cursor-pointer flex gap-2'>
+                            <div className='px-4 py-1.5 rounded-lg bg-neutral-900 text-[#FAFAFF] outline-2 outline-purple-500 transition-all text-xs backdrop-blur-3xl whitespace-nowrap hover:text-purple-500 md:text-sm cursor-pointer flex gap-2'>
                                 <img src="/Connect//github-svgrepo-com.svg" alt="Github Icon" className='w-4' />
                                 <span >Github</span>
                             </div>
                         </a>
                         <a href="/Connect/ZenenContrerasResume.pdf" download='ZenenContrerasResume.pdf'>
-                            <div className='px-4 py-1.5 rounded-full bg-neutral-900 text-[#FAFAFF] outline-2 outline-blue-500/100 transition-all text-xs backdrop-blur-3xl whitespace-nowrap hover:text-[#3b82f6] md:text-sm cursor-pointer flex gap-2'>
+                            <div className='px-4 py-1.5 rounded-lg bg-neutral-900 text-[#FAFAFF] outline-2 outline-blue-500 transition-all text-xs backdrop-blur-3xl whitespace-nowrap hover:text-[#3b82f6] md:text-sm cursor-pointer flex gap-2'>
                                 <img src="/Connect/resume.svg" alt="Resume Icon" className='w-4 fill-white' />
                                 <span >Resume</span>
                             </div>
                         </a>
                     </div>
                 </div>
+                <Link className='bg-[#1a1b1b] py-2 px-3 rounded-lg w-fit flex flex-row items-center gap-1 text-sm' to='/contact'>
+                Contact Me
+                <div className='animate-bounce rotate-90 '>
+                <  ArrowUpwardIcon />
+
+                </div>
+                </Link>
             </div>
 
             {/* Icon Cloud */}
-            <div className='w-full sm:w-[400px] lg:w-[450px] flex justify-center lg:justify-end flex-shrink-0'>
+            <div className='w-full sm:w-[400px] lg:w-[450px] flex justify-center lg:justify-end shrink-0'>
                 <IconCloud images={images} />
             </div>
         </section>

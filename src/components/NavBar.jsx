@@ -32,12 +32,12 @@ function NavBar () {
 
     return (
         <nav className="text-[#FAFAFF] bg-[#090a0c] fixed top-0 w-full max-w-[1100px] py-4 sm:py-5 px-4 sm:px-6 lg:px-10 flex items-center justify-between z-100">
-            <Link  to='/'>
+            <button onClick={() => handleSectionClick('home')}>
                 <div className="flex flex-row items-center gap-2 font-bold">
                     <img 
                         src="/ImagenYo.jpg" 
                         alt="Zenen Contreras" 
-                        className="w-10 sm:w-12 rounded-2xl"
+                        className="w-10 sm:w-12 rounded-lg"
                         />
                     <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
                         <h2 className="text-sm sm:text-base text-[#FAFAFF]">Zenen.dev</h2>
@@ -46,7 +46,7 @@ function NavBar () {
                         </span>
                     </div>
                 </div>
-            </Link>
+            </button>
 
             <div className="hidden lg:flex flex-row items-center gap-4">
                 {navLinks.map((link, index) => (
@@ -72,7 +72,7 @@ function NavBar () {
             </div>
 
             {/* Menú móvil */}
-            <button onClick={()=>setIsOpen(!isOpen)} className="relative lg:hidden p-2 text-white" aria-label="Menu">
+            <button onClick={()=>setIsOpen(!isOpen)} className=" lg:hidden p-2 text-white relative" aria-label="Menu">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>

@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import 'tailwind-animations';
+
 :root{
   font-family: 'Montserrat', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

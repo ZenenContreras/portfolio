@@ -69,8 +69,8 @@ function Projects () {
     ]
 
     return (
-        <section id='projects' className="text-[#FAFAFF] w-full max-w-[1100px] py-22 px-4 sm:px-6 lg:px-10 flex flex-col items-center justify-center gap-6 lg:gap-12">
-            <div className="flex flex-col gap-2">
+        <section id='projects' className="text-[#FAFAFF] w-full max-w-[1100px] py-22 px-4 sm:px-6 lg:px-10 flex flex-col items-center justify-center gap-6 lg:gap-12 animate-zoom-in ">
+            <div className="flex flex-col gap-2 ">
                 <h1 className="text-3xl lg:text-5xl font-bold text-center">Some Of my <span className="text-blue-500">Projects</span></h1>
                 <span className="text-sm text-[#95999d] text-center">Real-world applications showcasing my approach to problem-solving and code quality.</span>
             </div>
@@ -78,7 +78,7 @@ function Projects () {
             <div className="flex flex-col gap-4">
                 {projects.map((projects, index)=>{
                     return(
-                        <div key={index} className="flex flex-col lg:flex-row gap-6 lg:gap-22 p-3 items-center ">
+                        <div key={index} className="flex flex-col lg:flex-row gap-6 lg:gap-22 p-3 items-center">
                             <Carousel baseWidth={350} items={projects.images}/>
                             <div className="w-[300px] flex flex-col gap-3">
                                 <h1 className="font-bold text-2xl text-left">{projects.name}</h1>
@@ -95,7 +95,7 @@ function Projects () {
                                 <p className="text-sm text-[#95999d] text-justify">{projects.Description}</p>
                                 <div className="flex flex-row gap-1 items-center justify-center">
                                     {projects.Github && (
-                                        <button className="p-2 hover:scale-102 transition duration-80 bg-[#141414] rounded-lg border-1 w-full">
+                                        <button className="p-2 hover:scale-102 transition duration-80 bg-[#141414] rounded-lg border w-full">
                                             <a href={projects.Github} target="_blanck" className="flex flex-row items-center justify-center gap-4">
                                                 <img src="/SkillsLogo/github.svg" className="w-6" alt="" />
                                                 <span className="text-sm lg:text-md">Code</span>
