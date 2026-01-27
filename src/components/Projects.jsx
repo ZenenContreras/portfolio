@@ -104,7 +104,7 @@ function Projects () {
                                     )}
                                     
                                     {projects.Link && (
-                                        <button className="hover:scale-102 transition duration-80 p-2 bg-[#141414] rounded-lg border-1 w-full">
+                                        <button className="hover:scale-102 transition duration-80 p-2 bg-[#141414] rounded-lg border w-full">
                                             <a href={projects.Link} target="_blanck" className="flex flex-row items-center justify-center gap-4">
                                                 <img src="/link.svg" className="w-6" alt="" />
                                                 <span className="text-sm lg:text-md">Source</span>
