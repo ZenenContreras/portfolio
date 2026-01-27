@@ -80,7 +80,7 @@ function NavBar () {
 
             {/* Menú móvil con transición */}
             <div className={`
-                absolute z-100 top-16 right-4 bg-[#1a1b1b] rounded-xl shadow-2xl
+                absolute z-100 top-18 right-5 bg-[#15171b] rounded-xl shadow-lg
                 flex flex-col gap-4 p-5 min-w-[200px]
                 transition-all duration-300 ease-in-out lg:hidden
                 ${isOpen 
