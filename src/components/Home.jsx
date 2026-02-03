@@ -103,7 +103,7 @@ function Home () {
             </div>
 
             {/* Icon Cloud */}
-            <div className='w-full sm:w-[400px] lg:w-[450px] flex justify-center lg:justify-end shrink-0'>
+            <div className='w-full h-full sm:w-[400px] md:w-[450px] flex justify-center items-center lg:justify-end shrink-0'>
                 <IconCloud images={images} />
             </div>
         </section>
