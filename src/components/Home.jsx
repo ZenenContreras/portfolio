@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import TextType from './ui/TextType';
 import { IconCloud } from "./ui/icon-cloud"
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 function Home () {
