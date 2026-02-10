@@ -15,8 +15,7 @@ function Skills (){
                 trigger: '#skills',
                 start: 'top 80%',
                 end: 'bottom 90%',
-                scrub: true,
-                markers: true
+                scrub: true
             }
         })
     }, [])
