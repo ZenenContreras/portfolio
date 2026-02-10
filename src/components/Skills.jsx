@@ -1,8 +1,26 @@
 import { useState } from "react"
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 function Skills (){
     const [showAll, setshowAll] = useState(false)
     const initialDisplay = 6
+
+    useGSAP(()=>{
+        gsap.fromTo('#skills', {
+            opacity: 0 , y: 100
+        },{
+            opacity: 1, y: 0 , duration: 1,
+            scrollTrigger: {
+                trigger: '#skills',
+                start: 'top 80%',
+                end: 'bottom 90%',
+                scrub: true,
+                markers: true
+            }
+        })
+    }, [])
+
 
     const skills = [
         {"name": "Javascript", "icon": "/SkillsLogo/javascript.svg", "description": "Programming Language"},
@@ -25,7 +43,7 @@ function Skills (){
     const displaySkills = showAll ? skills : skills.slice(0, initialDisplay)
 
     return (
-        <section id="skills" className="text-[#FAFAFF] w-full max-w-[1100px] py-22 sm:py-24 px-4 sm:px-6 lg:px-10 flex flex-col items-center justify-center gap-6 lg:gap-12 animate-zoom-in ">
+        <section id="skills" className="text-[#FAFAFF] w-full max-w-[1100px] py-22 sm:py-24 px-4 sm:px-6 lg:px-10 flex flex-col items-center justify-center gap-6 lg:gap-12 ">
             <div className="flex flex-col gap-2">
                 <h1 className="text-3xl lg:text-5xl font-bold text-center">My Skills</h1>
                 <span className="text-sm text-[#95999d] text-center">Technologies I use to build scalable, performant web applications.</span>
@@ -33,8 +51,7 @@ function Skills (){
             <div className="grid grid-cols-2 gap-y-5 gap-x-6 lg:gap-x-30">
                 {displaySkills.map((skills, index)=>{
                     const isNewSkill = index >= initialDisplay && showAll
-
-                    return(
+                    return (
                         <div className={`p-4 py-3 text-left flex flex-row gap-2 items-center hover:bg-[#141414] rounded-md cursor-pointer ${isNewSkill  ? 'animate-fadeInUp' : 'opacity-100'}`} key={index}>
                             <img src={skills.icon} className='w-6 lg:w-10' alt="" />
                             <div className="flex flex-col ">

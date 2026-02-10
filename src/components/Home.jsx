@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import TextType from './ui/TextType';
 import { IconCloud } from "./ui/icon-cloud"
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 function Home () {
     const images = [
@@ -24,10 +26,31 @@ function Home () {
     ]
 
 
+    useGSAP(()=>{
+        gsap.fromTo('#home', {
+            opacity: 0 
+        },{
+            opacity: 1, duration: 2,
+        }),
+
+        gsap.fromTo('#text', {
+            x: -100
+        },{
+            x: 0, duration: 1,
+        }),
+        gsap.fromTo('#cloud', {
+            x: 100
+        },{
+            x: 0, duration: 1,
+        })
+
+    }, [])
+
+
     return (
-        <section id='home' className='text-[#FAFAFF] w-full max-w-[1100px] pt-22 lg:py-34 px-4 sm:px-6 lg:px-10 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-6 lg:gap-12 animate-fade-in '>
+        <section id='home' className='text-[#FAFAFF] w-full max-w-[1100px] pt-22 lg:py-34 px-4 sm:px-6 lg:px-10 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-6 lg:gap-12'>
             {/* Contenido de texto */}
-            <div className="w-full lg:w-auto flex flex-col gap-6 sm:gap-8 ">
+            <div id='text' className="w-full lg:w-auto flex flex-col gap-6 sm:gap-8 ">
                 {/* Badge Open to Work */}
                 <div className="bg-[#1a1b1b] py-1.5 px-3 rounded-lg w-fit flex flex-row items-center gap-2">
                     <span className="absolute inline-flex size-2 rounded-full bg-green-500"></span>
@@ -103,7 +126,7 @@ function Home () {
             </div>
 
             {/* Icon Cloud */}
-            <div className='w-full h-full sm:w-[400px] md:w-[450px] flex justify-center items-center lg:justify-end shrink-0'>
+            <div id='cloud' className='w-full h-full sm:w-[400px] md:w-[450px] flex justify-center items-center lg:justify-end shrink-0'>
                 <IconCloud images={images} />
             </div>
         </section>
