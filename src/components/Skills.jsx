@@ -2,41 +2,45 @@ import { useState } from "react"
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-function Skills (){
+function Skills() {
     const [showAll, setshowAll] = useState(false)
     const initialDisplay = 6
 
-    useGSAP(()=>{
-        gsap.fromTo('#skills', {
-            opacity: 0 , y: 100
-        },{
-            opacity: 1, y: 0 , duration: 1,
-            scrollTrigger: {
-                trigger: '#skills',
-                start: 'top 80%',
-                end: 'bottom 90%',
-                scrub: true
-            }
-        })
+    useGSAP(() => {
+        const skillItems = gsap.utils.toArray('.skill-item');
+
+        skillItems.forEach((skill) => {
+            gsap.fromTo(skill, {
+                y: 50, opacity: 0
+            }, {
+                y: 0, opacity: 1, duration: 0.8,
+                scrollTrigger: {
+                    trigger: skill,
+                    start: 'top 90%',
+                    end: 'top 70%',
+                    scrub: true,
+                }
+            })
+        });
     }, [])
 
 
     const skills = [
-        {"name": "Javascript", "icon": "/SkillsLogo/javascript.svg", "description": "Programming Language"},
-        {"name": "Typescript", "icon": "/SkillsLogo/typescript.svg", "description": "Programming Language"},
-        {"name": "React", "icon": "/SkillsLogo/react.svg", "description": "UI Library"},
-        {"name": "Next.js", "icon": "/SkillsLogo/nextjs.svg", "description": "React Framework"},
-        {"name": "Tailwind CSS", "icon": "/SkillsLogo/tailwindcss.svg", "description": "CSS Framework"},
-        {"name": "Git", "icon": "/SkillsLogo/git.svg", "description": "Version Control"},
-        {"name": "GitHub", "icon": "/SkillsLogo/github.svg", "description": "Code Hosting"},
-        {"name": "HTML5", "icon": "/SkillsLogo/html-5.svg", "description": "Markup Language"},
-        {"name": "CSS3", "icon": "/SkillsLogo/css.svg", "description": "Styling Language"},
-        {"name": "Express", "icon": "/SkillsLogo/express.svg", "description": "Node.js Framework"},
-        {"name": "PostgreSQL", "icon": "/SkillsLogo/postgresql.svg", "description": "Database"},
-        {"name": "Node.js", "icon": "/SkillsLogo/nodejs.svg", "description": "JavaScript Runtime"},
-        {"name": "Supabase", "icon": "/SkillsLogo/supabase.svg", "description": "Backend Platform"},
-        {"name": "Vercel", "icon": "/SkillsLogo/vercel.svg", "description": "Deployment Platform"},
-        {"name": "Stripe", "icon": "/SkillsLogo/stripe.svg", "description": "Payment Integration"},
+        { "name": "Javascript", "icon": "/SkillsLogo/javascript.svg", "description": "Programming Language" },
+        { "name": "Typescript", "icon": "/SkillsLogo/typescript.svg", "description": "Programming Language" },
+        { "name": "React", "icon": "/SkillsLogo/react.svg", "description": "UI Library" },
+        { "name": "Next.js", "icon": "/SkillsLogo/nextjs.svg", "description": "React Framework" },
+        { "name": "Tailwind CSS", "icon": "/SkillsLogo/tailwindcss.svg", "description": "CSS Framework" },
+        { "name": "Git", "icon": "/SkillsLogo/git.svg", "description": "Version Control" },
+        { "name": "GitHub", "icon": "/SkillsLogo/github.svg", "description": "Code Hosting" },
+        { "name": "HTML5", "icon": "/SkillsLogo/html-5.svg", "description": "Markup Language" },
+        { "name": "CSS3", "icon": "/SkillsLogo/css.svg", "description": "Styling Language" },
+        { "name": "Express", "icon": "/SkillsLogo/express.svg", "description": "Node.js Framework" },
+        { "name": "PostgreSQL", "icon": "/SkillsLogo/postgresql.svg", "description": "Database" },
+        { "name": "Node.js", "icon": "/SkillsLogo/nodejs.svg", "description": "JavaScript Runtime" },
+        { "name": "Supabase", "icon": "/SkillsLogo/supabase.svg", "description": "Backend Platform" },
+        { "name": "Vercel", "icon": "/SkillsLogo/vercel.svg", "description": "Deployment Platform" },
+        { "name": "Stripe", "icon": "/SkillsLogo/stripe.svg", "description": "Payment Integration" },
     ]
 
     const displaySkills = showAll ? skills : skills.slice(0, initialDisplay)
@@ -48,10 +52,10 @@ function Skills (){
                 <span className="text-sm text-[#95999d] text-center">Technologies I use to build scalable, performant web applications.</span>
             </div>
             <div className="grid grid-cols-2 gap-y-5 gap-x-6 lg:gap-x-30">
-                {displaySkills.map((skills, index)=>{
+                {displaySkills.map((skills, index) => {
                     const isNewSkill = index >= initialDisplay && showAll
                     return (
-                        <div className={`p-4 py-3 text-left flex flex-row gap-2 items-center hover:bg-[#141414] rounded-md cursor-pointer ${isNewSkill  ? 'animate-fadeInUp' : 'opacity-100'}`} key={index}>
+                        <div className={`skill-item p-4 py-3 text-left flex flex-row gap-2 items-center hover:bg-[#141414] rounded-md cursor-pointer ${isNewSkill ? 'animate-fadeInUp' : ''}`} key={index}>
                             <img src={skills.icon} className='w-6 lg:w-10' alt="" />
                             <div className="flex flex-col ">
                                 <h3 className="text-sm lg:text-lg">{skills.name}</h3>
@@ -63,12 +67,12 @@ function Skills (){
             </div>
 
             {skills.length > initialDisplay && (
-                <button onClick={()=>setshowAll(!showAll)} className="text-xs lg:text-sm px-6 py-2 bg-[#141414] rounded-md flex items-center gap-2 hover:scale-103 transition duration-250 ease-in-out">
-                    {showAll ? 'Show Less' : `Show more (${skills.length - initialDisplay } more)`}
-                    <svg 
-                        className={`w-4 h-4 transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`} 
-                        fill="none" 
-                        stroke="currentColor" 
+                <button onClick={() => setshowAll(!showAll)} className="text-xs lg:text-sm px-6 py-2 bg-[#141414] rounded-md flex items-center gap-2 hover:scale-103 transition duration-250 ease-in-out">
+                    {showAll ? 'Show Less' : `Show more (${skills.length - initialDisplay} more)`}
+                    <svg
+                        className={`w-4 h-4 transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`}
+                        fill="none"
+                        stroke="currentColor"
                         viewBox="0 0 24 24"
                     >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
