@@ -27,21 +27,23 @@ function Home () {
 
 
     useGSAP(()=>{
-        gsap.fromTo('#home', {
-            opacity: 0 
-        },{
-            opacity: 1, duration: 2,
-        }),
 
         gsap.fromTo('#text', {
-            x: -100
+            x: -100, opacity: 0 
         },{
-            x: 0, duration: 1,
+            x: 0, opacity: 1, duration: 1,
         }),
+
         gsap.fromTo('#cloud', {
-            x: 100
+            x: 100, opacity: 0
         },{
-            x: 0, duration: 1,
+            x: 0, duration: 1, opacity: 1,
+            scrollTrigger: {
+                trigger: '#cloud',
+                start: 'top 70%',
+                end: 'top 50%',
+                scrub: true
+            }
         })
 
     }, [])
