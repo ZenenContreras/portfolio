@@ -27,6 +27,8 @@ function Home () {
 
 
     useGSAP(()=>{
+        let mm = gsap.matchMedia()
+
 
         gsap.fromTo('#text', {
             x: -100, opacity: 0 
@@ -34,17 +36,29 @@ function Home () {
             x: 0, opacity: 1, duration: 1,
         }),
 
-        gsap.fromTo('#cloud', {
-            x: 100, opacity: 0
+        mm.add('(max-width:800px)', () => {
+            gsap.fromTo('#cloud', {
+            x: 200, opacity: 0
         },{
             x: 0, duration: 1, opacity: 1,
             scrollTrigger: {
                 trigger: '#cloud',
-                start: 'top 70%',
+                start: 'top 60%',
                 end: 'top 50%',
                 scrub: true
             }
         })
+        })
+
+        mm.add('(min-width:800px)', () => {
+            gsap.fromTo('#cloud', {
+            x: 150, opacity: 0 
+        },{
+            x: 0, opacity: 1, duration: 1,
+            })
+        })
+
+
 
     }, [])
 
