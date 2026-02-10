@@ -24,6 +24,7 @@ function Projects() {
     const projects = [
         {
             "name": "Tout Á Un Clic La | Full-stack e-commerce",
+            "id" : 1,
             "Description": "Latin products in Montreal. Scaled to 100+ active users with real-time inventory tracking, secure payment integration, and optimized performance.", "Tech": [
                 { "name": "Next.js", "icon": "/SkillsLogo/nextjs.svg", "color": "#141414" },
                 { "name": "Express.js", "icon": "/SkillsLogo/express.svg", "color": "#141414" },
@@ -41,6 +42,7 @@ function Projects() {
         },
         {
             "name": "Fabio Canchila | Business Consulting Platform",
+            "id" : 2,
             "Description": "Professional consulting platform offering business advisory services, educational resources, and digital products. Features service showcase and content management for books and courses.",
             "Tech": [
                 { "name": "React", "icon": "/SkillsLogo/react.svg", "color": "#001629" },
@@ -57,6 +59,7 @@ function Projects() {
         },
         {
             "name": "Nazly Royero | Personal Transformation Coaching",
+            "id" : 3,
             "Description": "Coaching platform specializing in personal and professional transformation through the 'Método Estrella'. Features blog content, service offerings, and integrated scheduling system for one-on-one sessions.",
             "Tech": [
                 { "name": "React", "icon": "/SkillsLogo/react.svg", "color": "#001629" },
@@ -73,6 +76,7 @@ function Projects() {
         },
         {
             "name": "WeatherNow | Global Forecast Dashboard ",
+            "id" : 4,
             "Description": "Weather application delivering real-time forecasts for any city worldwide. Features 7-day predictions, hourly breakdowns, and instant °C/°F conversion.",
             "Tech": [
                 { "name": "React.js", "icon": "/SkillsLogo/react.svg", "color": "#001629" },
@@ -97,36 +101,36 @@ function Projects() {
             </div>
 
             <div className="flex flex-col gap-4">
-                {projects.map((projects, index) => {
+                {projects.map((project) => {
                     return (
-                        <div key={index} className="project-card flex flex-col lg:flex-row gap-6 lg:gap-22 p-3 items-center">
-                            <Carousel baseWidth={350} items={projects.images} />
+                        <div key={project.id} className="project-card flex flex-col lg:flex-row gap-6 lg:gap-22 p-3 items-center">
+                            <Carousel baseWidth={350} items={project.images} />
                             <div className="w-[300px] flex flex-col gap-3">
-                                <h1 className="font-bold text-2xl text-left">{projects.name}</h1>
+                                <h1 className="font-bold text-2xl text-left">{project.name}</h1>
                                 <div className="grid grid-cols-2 gap-2">
-                                    {projects.Tech.map((tech) => {
+                                    {project.Tech.map((tech) => {
                                         return (
-                                            <div className={`flex flex-row items-center gap-2 p-2 rounded-lg`} style={{ backgroundColor: tech.color }}>
+                                            <div key={tech.name} className={`flex flex-row items-center gap-2 p-2 rounded-lg`} style={{ backgroundColor: tech.color }}>
                                                 <img src={tech.icon} alt={tech.name} className="w-4" />
                                                 <span className="text-xs">{tech.name}</span>
                                             </div>
                                         )
                                     })}
                                 </div>
-                                <p className="text-sm text-[#95999d] text-justify">{projects.Description}</p>
+                                <p className="text-sm text-[#95999d] text-justify">{project.Description}</p>
                                 <div className="flex flex-row gap-1 items-center justify-center">
-                                    {projects.Github && (
+                                    {project.Github && (
                                         <button className="p-2 hover:scale-102 transition duration-80 bg-[#141414] rounded-lg border w-full">
-                                            <a href={projects.Github} target="_blanck" className="flex flex-row items-center justify-center gap-4">
+                                            <a href={project.Github} target="_blanck" className="flex flex-row items-center justify-center gap-4">
                                                 <img src="/SkillsLogo/github.svg" className="w-6" alt="" />
                                                 <span className="text-sm lg:text-md">Code</span>
                                             </a>
                                         </button>
                                     )}
 
-                                    {projects.Link && (
+                                    {project.Link && (
                                         <button className="hover:scale-102 transition duration-80 p-2 bg-[#141414] rounded-lg border w-full">
-                                            <a href={projects.Link} target="_blanck" className="flex flex-row items-center justify-center gap-4">
+                                            <a href={project.Link} target="_blanck" className="flex flex-row items-center justify-center gap-4">
                                                 <img src="/link.svg" className="w-6" alt="" />
                                                 <span className="text-sm lg:text-md">Source</span>
                                             </a>
