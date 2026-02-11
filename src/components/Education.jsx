@@ -50,7 +50,7 @@ export default function Education() {
         {
             year: "2024",
             title: "Academic Exchange",
-            institution: "Exchange University (International/National)",
+            institution: "Pontificia Universidad Javeriana (National)",
             description: "Semester focused on advanced, Artificial Intelligence,  technical specialization, international networking, and adaptation to new engineering methodologies."
         }
     ];
