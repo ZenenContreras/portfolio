@@ -25,7 +25,7 @@ function Projects() {
         {
             "name": "Tout Á Un Clic La | Full-stack e-commerce",
             "id" : 1,
-            "Description": "Latin products in Montreal. Scaled to 100+ active users with real-time inventory tracking, secure payment integration, and optimized performance.", "Tech": [
+            "Description": "Latin products in Montreal. Scaled to 200+ active users with real-time inventory tracking, secure payment integration, and optimized performance.", "Tech": [
                 { "name": "Next.js", "icon": "/SkillsLogo/nextjs.svg", "color": "#141414" },
                 { "name": "Express.js", "icon": "/SkillsLogo/express.svg", "color": "#141414" },
                 { "name": "Tailwind CSS", "icon": "/SkillsLogo/tailwindcss.svg", "color": "#003159" },

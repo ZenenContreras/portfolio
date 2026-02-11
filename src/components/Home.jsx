@@ -40,11 +40,11 @@ function Home () {
             gsap.fromTo('#cloud', {
             x: 200, opacity: 0
         },{
-            x: 0, duration: 1, opacity: 1,
+            x: 0, duration: 4, opacity: 1,
             scrollTrigger: {
                 trigger: '#cloud',
                 start: 'top 60%',
-                end: 'top 50%',
+                end: 'botton 50%',
                 scrub: true
             }
         })
